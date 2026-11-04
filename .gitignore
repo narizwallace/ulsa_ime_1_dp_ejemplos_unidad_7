@@ -69,3 +69,10 @@ Testing/
 
 # macOS files
 .DS_Store
+
+# g++ output files
+ejemplo
+ejemplo.exe
+
+# IA output files
+Claude outputs/
