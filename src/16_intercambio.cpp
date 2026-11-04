@@ -19,5 +19,10 @@ int main() {
 
     cout << "Despues: " << numeros[0] << " " << numeros[1] << endl;
 
+    std::swap(numeros[0], numeros[1]); // intercambia usando la funcion de la libreria
+
+    cout << "Ahora con std::swap: " << numeros[0] << " " << numeros[1] << endl;
+
+
     return 0; // indica al sistema operativo que el programa termino sin errores
 }

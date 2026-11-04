@@ -15,12 +15,24 @@ void imprimirArreglo(const int arr[], int tam) {
     cout << endl;
 }
 
+void imprimirLinea(
+    int largo, char simbolo) {
+  for (int i = 0; i < largo; i++)
+    cout << simbolo;
+  cout << endl;
+}
+
 int main() {
     int numeros[TAM] = {50, 20, 40, 10, 30}; // arreglo desordenado
+
+        imprimirLinea(30, '=');
 
     cout << "Inicio:    ";
     imprimirArreglo(numeros, TAM);
 
+    imprimirLinea(30, '-');
+
+    int numeroCiclos = 0; // contador de ciclos (comparaciones)
     // Ciclo externo: cada vuelta es una "pasada" completa por el arreglo
     for (int i = 0; i < TAM - 1; i++) {
         // Ciclo interno: compara vecinos. Resta i porque los ultimos i ya estan en su lugar
@@ -29,11 +41,15 @@ int main() {
                 int temp = numeros[j];         // ...se intercambian con una variable temporal
                 numeros[j] = numeros[j + 1];
                 numeros[j + 1] = temp;
+
+                numeroCiclos++; // cuenta cada comparacion que resulto en intercambio
             }
         }
         cout << "Pasada " << i + 1 << ":  "; // i + 1 para contar desde 1
         imprimirArreglo(numeros, TAM);         // muestra el estado despues de la pasada
     }
+
+    cout << "Numero Ciclos:     " << numeroCiclos << endl;
 
     return 0; // indica al sistema operativo que el programa termino sin errores
 }

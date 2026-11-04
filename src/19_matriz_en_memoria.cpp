@@ -21,5 +21,7 @@ int main() {
         }
     }
 
+    cout << "Tamanio de la matriz: " << sizeof(m) << " bytes" << endl; // tamanio total en memoria
+
     return 0; // indica al sistema operativo que el programa termino sin errores
 }
